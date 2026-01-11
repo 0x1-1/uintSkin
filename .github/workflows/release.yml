@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -19,23 +19,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
-      - name: Install pnpm (GLOBAL – Windows safe)
-        shell: pwsh
-        run: |
-          npm install -g pnpm
-          pnpm --version
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install pnpm
+        run: corepack prepare pnpm@9.15.4 --activate
 
       - name: Install dependencies
-        shell: pwsh
         run: pnpm install --frozen-lockfile
 
       - name: Build app
-        shell: pwsh
         run: pnpm run build
 
-      - name: Build & publish (GitHub Releases)
+      - name: Build & publish Windows (from Linux)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: pwsh
         run: pnpm exec electron-builder --win --publish always
