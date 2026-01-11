@@ -1,9 +1,9 @@
 {
   "app": {
     "title": "uintSkin",
-    "loading": "Y?kleniyor...",
-    "ready": "Haz?r",
-    "subtitle": "LoL i?in skin y?neticisi"
+    "loading": "Yükleniyor...",
+    "ready": "Hazır",
+    "subtitle": "LoL için skin yöneticisi"
   },
   "actions": {
     "browse": "Gözat",
@@ -72,7 +72,7 @@
   "status": {
     "detectingGame": "Oyun yolu tespit ediliyor...",
     "gameDetected": "Oyun yolu otomatik olarak tespit edildi",
-    "gameNotFound": "Oyun yolu bulunamadı. Lütfen manuel olarak gözatın.",
+    "gameNotFound": "Oyun yolu bulunamadı. Lütfen manuel olarak göz atın.",
     "downloading": "{{name}} indiriliyor...",
     "applying": "{{name}} uygulanıyor...",
     "applied": "{{name}} başarıyla uygulandı!",

@@ -1,9 +1,8 @@
 import { memo } from 'react'
-import { Heart } from 'lucide-react'
+import { Heart, Sparkles } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useAtom, useAtomValue } from 'jotai'
 import { gamePathAtom } from '../../store/atoms/game.atoms'
-import { championDataAtom } from '../../store/atoms/champion.atoms'
 import { showFavoritesOnlyAtom } from '../../store/atoms'
 import { showSettingsDialogAtom } from '../../store/atoms/ui.atoms'
 import {
@@ -12,14 +11,12 @@ import {
 } from '../../store/atoms/settings.atoms'
 import { lcuConnectedAtom, isInChampSelectAtom } from '../../store/atoms/lcu.atoms'
 import { useGameDetection } from '../../hooks/useGameDetection'
-import { useChampionData } from '../../hooks/useChampionData'
 import { LCUStatusIndicator } from '../LCUStatusIndicator'
 import { RoomPanel } from '../RoomPanel'
 
 export const AppHeader = memo(() => {
   const { t } = useTranslation()
   const gamePath = useAtomValue(gamePathAtom)
-  const championData = useAtomValue(championDataAtom)
   const [showFavoritesOnly, setShowFavoritesOnly] = useAtom(showFavoritesOnlyAtom)
   const [, setShowSettingsDialog] = useAtom(showSettingsDialogAtom)
   const leagueClientEnabled = useAtomValue(leagueClientEnabledAtom)
@@ -28,39 +25,46 @@ export const AppHeader = memo(() => {
   const isInChampSelect = useAtomValue(isInChampSelectAtom)
 
   const { browseForGame } = useGameDetection()
-  const { fetchChampionData, isLoadingChampionData } = useChampionData()
-
-  const loading = isLoadingChampionData
+  const loading = false
 
   return (
-    <div className="px-6 pt-4 pb-2">
-      <div className="relative rounded-2xl border border-border-subtle bg-surface/80 shadow-medium overflow-hidden backdrop-blur-xl">
-        <div className="absolute inset-0 opacity-60 bg-[radial-gradient(500px_at_8%_20%,rgba(0,176,240,0.18),transparent),radial-gradient(420px_at_85%_10%,rgba(240,55,172,0.16),transparent)]" />
-        <div className="relative px-5 py-4 flex flex-col gap-4">
-          <div className="flex flex-wrap items-center gap-3 justify-between">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="px-4 py-2 rounded-xl bg-primary-500/10 border border-primary-500/30 shadow-soft">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-text-primary">
+    <div className="px-6 pt-3 pb-2">
+      <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-gradient-to-r from-[#0c1530] via-[#0f1135] to-[#1a0f3b] shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+        <div className="absolute inset-0 opacity-50 bg-[radial-gradient(900px_at_12%_20%,rgba(0,176,240,0.25),transparent),radial-gradient(780px_at_80%_8%,rgba(241,99,184,0.28),transparent)]" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+        <div className="relative px-5 py-4 lg:px-7 lg:py-5 flex flex-col gap-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 border border-white/15 shadow-soft">
+                <span className="text-lg font-bold text-white">U</span>
+              </div>
+              <div className="space-y-1">
+                <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/80">
                   {t('app.title')}
                 </div>
-                <div className="text-xs font-medium text-text-muted tracking-[0.02em]">
+                <div className="text-xl lg:text-2xl font-semibold text-white drop-shadow-sm">
                   {t('app.subtitle')}
                 </div>
+                <div className="text-xs text-white/70 flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5 text-secondary-300" />
+                  {t('status.gameDetected')}
+                </div>
               </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
               <LCUStatusIndicator
                 connected={lcuConnected}
                 inChampSelect={isInChampSelect}
                 enabled={leagueClientEnabled && championDetectionEnabled}
               />
               <RoomPanel />
-            </div>
-            <div className="flex items-center gap-2">
               <button
-                className={`px-4 py-2.5 text-sm rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-semibold tracking-wide
+                className={`px-4 py-2.5 text-sm rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-semibold tracking-wide
             ${
               showFavoritesOnly
-                ? 'bg-secondary-500/15 text-secondary-900 dark:text-secondary-50 border border-secondary-500/50 shadow-soft'
-                : 'bg-primary-500/10 text-text-primary border border-border-subtle shadow-soft hover:border-primary-500/30'
+                ? 'bg-secondary-500/20 text-white border border-secondary-400/60 shadow-soft'
+                : 'bg-white/10 text-white border border-white/10 shadow-soft hover:border-white/30'
             }`}
                 onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
                 disabled={loading}
@@ -68,9 +72,7 @@ export const AppHeader = memo(() => {
                 aria-label={t('nav.favorites')}
               >
                 <Heart
-                  className={`w-4 h-4 ${
-                    showFavoritesOnly ? 'text-secondary-700 dark:text-secondary-200' : 'text-primary-600'
-                  } transition-colors`}
+                  className={`w-4 h-4 ${showFavoritesOnly ? 'text-white' : 'text-white/70'} transition-colors`}
                   aria-hidden="true"
                   strokeWidth={showFavoritesOnly ? 2.4 : 2}
                   fill={showFavoritesOnly ? 'currentColor' : 'none'}
@@ -78,7 +80,7 @@ export const AppHeader = memo(() => {
                 {t('nav.favorites')}
               </button>
               <button
-                className="px-3 py-2.5 text-sm bg-primary-500/15 hover:bg-primary-500/25 text-text-primary font-semibold rounded-lg transition-all duration-200 border border-primary-500/40 shadow-soft flex items-center gap-2"
+                className="px-4 py-2.5 text-sm rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold transition-all duration-200 border border-white/20 shadow-soft flex items-center gap-2"
                 onClick={() => setShowSettingsDialog(true)}
                 title={t('settings.title')}
               >
@@ -101,22 +103,18 @@ export const AppHeader = memo(() => {
             </div>
           </div>
 
-          <div className="grid gap-3 lg:grid-cols-[1.4fr_auto_auto] md:grid-cols-[1fr]">
-            <div className="flex items-center gap-3 bg-elevated/70 border border-border-subtle rounded-xl px-4 py-3 shadow-soft">
-              <div className="flex flex-col gap-0.5 w-full">
-                <div className="text-[11px] uppercase tracking-[0.16em] text-text-muted font-semibold">
+          <div className="grid gap-3">
+            <div className="flex items-center gap-3 bg-white/6 border border-white/10 rounded-xl px-4 py-3 shadow-soft">
+              <div className="flex flex-col gap-1 w-full text-white/80">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-white/65 font-semibold">
                   {t('status.gameDetected')}
                 </div>
                 <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    value={gamePath}
-                    placeholder={t('status.gameNotFound')}
-                    readOnly
-                    className="flex-1 px-0 py-1.5 text-sm bg-transparent border-0 text-text-primary placeholder-text-muted focus:outline-none"
-                  />
+                  <div className="flex-1 truncate rounded-lg bg-black/20 px-3 py-2 text-sm border border-white/10">
+                    {gamePath || t('status.gameNotFound')}
+                  </div>
                   <button
-                    className="px-4 py-2 text-sm bg-primary-500 text-white font-semibold rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium active:scale-[0.98]"
+                    className="px-4 py-2 text-sm bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium active:scale-[0.98]"
                     onClick={browseForGame}
                     disabled={loading}
                   >
@@ -125,16 +123,6 @@ export const AppHeader = memo(() => {
                 </div>
               </div>
             </div>
-
-            {!championData && (
-              <button
-                className="px-5 py-3 text-sm bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-[0_12px_32px_rgba(0,176,240,0.35)] hover:brightness-[1.03] active:scale-[0.98]"
-                onClick={fetchChampionData}
-                disabled={loading}
-              >
-                {t('champion.downloadData')}
-              </button>
-            )}
           </div>
         </div>
       </div>
