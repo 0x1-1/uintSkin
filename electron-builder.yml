@@ -1,5 +1,5 @@
-appId: com.mythicshift.app
-productName: MythicShift
+appId: com.uintskin.app
+productName: uintSkin
 directories:
   buildResources: build
 fileAssociations:
@@ -29,16 +29,16 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: MythicShift
+  executableName: uintSkin
   target:
     - nsis
   icon: build/icon.ico
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
-  artifactName: MythicShift-${version}-setup.${ext}
-  shortcutName: MythicShift
-  uninstallDisplayName: MythicShift - League of Legends Skin Lab
+  artifactName: uintSkin-${version}-setup.${ext}
+  shortcutName: uintSkin
+  uninstallDisplayName: uintSkin - League of Legends Skin Manager
   createDesktopShortcut: always
   createStartMenuShortcut: true
   deleteAppDataOnUninstall: false

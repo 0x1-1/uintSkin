@@ -1,9 +1,9 @@
 {
   "app": {
-    "title": "MythicShift",
-    "loading": "Yükleniyor...",
-    "ready": "Hazır",
-    "subtitle": "LoL için kostüm laboratuvarı"
+    "title": "uintSkin",
+    "loading": "Y?kleniyor...",
+    "ready": "Haz?r",
+    "subtitle": "LoL i?in skin y?neticisi"
   },
   "actions": {
     "browse": "Gözat",
@@ -273,11 +273,11 @@
     }
   },
   "tray": {
-    "show": "MythicShift'i göster",
-    "hide": "MythicShift'i gizle",
+    "show": "uintSkin'i g?ster",
+    "hide": "uintSkin'i gizle",
     "language": "Dil",
     "openSettings": "Ayarları aç",
-    "quit": "MythicShift'ten çık",
+    "quit": "uintSkin'den ??k",
     "checkForUpdates": "Güncellemeleri Kontrol Et"
   },
   "fileUpload": {
@@ -342,7 +342,7 @@
   "error": "Hata",
   "update": {
     "available": "Güncelleme mevcut",
-    "description": "MythicShift'in yeni bir sürümü indirilmeye hazır.",
+    "description": "uintSkin'in yeni bir s?r?m? indirilmeye haz?r.",
     "whatsNew": "Yeni neler var",
     "downloading": "İndiriliyor...",
     "updateNow": "Şimdi güncelle",

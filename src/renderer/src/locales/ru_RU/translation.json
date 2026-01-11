@@ -1,9 +1,9 @@
 {
   "app": {
-    "title": "MythicShift",
+    "title": "uintSkin",
     "loading": "Загрузка...",
     "ready": "Готово",
-    "subtitle": "Лаборатория скинов для Лиги"
+    "subtitle": "Менеджер скинов для Лиги"
   },
   "actions": {
     "browse": "Обзор",
@@ -277,12 +277,12 @@
     }
   },
   "tray": {
-    "show": "Показать MythicShift",
-    "hide": "Скрыть MythicShift",
+    "show": "Показать uintSkin",
+    "hide": "Скрыть uintSkin",
     "language": "Язык",
     "checkForUpdates": "Проверить обновления",
     "openSettings": "Открыть настройки",
-    "quit": "Выйти из MythicShift"
+    "quit": "Выйти из uintSkin"
   },
   "errors": {
     "generic": "Произошла ошибка",
@@ -354,7 +354,7 @@
   "error": "Ошибка",
   "update": {
     "available": "Доступно обновление",
-    "description": "Новая версия MythicShift доступна для скачивания.",
+    "description": "Новая версия uintSkin доступна для скачивания.",
     "whatsNew": "Что нового",
     "downloading": "Скачивание...",
     "updateNow": "Обновить сейчас",

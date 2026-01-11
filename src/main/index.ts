@@ -283,8 +283,8 @@ function updateTrayMenu(): void {
   const contextMenu = Menu.buildFromTemplate([
     {
       label: mainWindow?.isVisible()
-        ? t('tray.hide', 'Hide MythicShift')
-        : t('tray.show', 'Show MythicShift'),
+        ? t('tray.hide', 'Hide uintSkin')
+        : t('tray.show', 'Show uintSkin'),
       click: () => {
         if (mainWindow) {
           if (mainWindow.isVisible()) {
@@ -449,7 +449,7 @@ function updateTrayMenu(): void {
     },
     { type: 'separator' },
     {
-      label: t('tray.quit', 'Quit MythicShift'),
+      label: t('tray.quit', 'Quit uintSkin'),
       click: () => {
         app.quit()
       }
@@ -462,7 +462,7 @@ function updateTrayMenu(): void {
 function createTray(): void {
   const trayIcon = nativeImage.createFromPath(icon)
   tray = new Tray(trayIcon)
-  tray.setToolTip('MythicShift')
+  tray.setToolTip('uintSkin')
 
   // Initial menu
   updateTrayMenu()

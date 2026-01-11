@@ -41,7 +41,7 @@ export class GitHubApiService {
         timeout: 10000, // 10 second timeout
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          'User-Agent': 'MythicShift-LoL-Skin-Lab'
+          'User-Agent': 'uintSkin-LoL-Skin-Manager'
         }
       })
 

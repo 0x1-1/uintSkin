@@ -94,7 +94,7 @@ export function ToolsDownloadModal() {
       case 'filesystem':
         return (
           <ul className="text-xs text-text-secondary mt-2 space-y-1">
-            <li>• Run MythicShift as Administrator</li>
+            <li>• Run uintSkin as Administrator</li>
             <li>• Check available disk space</li>
             <li>• Ensure the installation folder is writable</li>
           </ul>
@@ -255,7 +255,7 @@ export function ToolsDownloadModal() {
                   {t('tools.downloadManuallyFromGithub')}
                 </button>
                 <p className="text-xs text-text-tertiary mt-2">
-                  {t('tools.extractTo')} {`%APPDATA%\\MythicShift\\cslol-tools`}
+                  {t('tools.extractTo')} {`%APPDATA%\\uintSkin\\cslol-tools`}
                 </p>
               </div>
             )}

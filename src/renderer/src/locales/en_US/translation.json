@@ -1,9 +1,9 @@
 {
   "app": {
-    "title": "MythicShift",
+    "title": "uintSkin",
     "loading": "Loading...",
     "ready": "Ready",
-    "subtitle": "League-ready skin lab"
+    "subtitle": "League-ready skin manager"
   },
   "actions": {
     "browse": "Browse",
@@ -325,12 +325,12 @@
     }
   },
   "tray": {
-    "show": "Show MythicShift",
-    "hide": "Hide MythicShift",
+    "show": "Show uintSkin",
+    "hide": "Hide uintSkin",
     "language": "Language",
     "checkForUpdates": "Check for Updates",
     "openSettings": "Open Settings",
-    "quit": "Quit MythicShift"
+    "quit": "Quit uintSkin"
   },
   "fileUpload": {
     "uploadButton": "Upload Custom Mod",
@@ -423,7 +423,7 @@
   "error": "Error",
   "update": {
     "available": "Update Available",
-    "description": "A new version of MythicShift is available for download.",
+    "description": "A new version of uintSkin is available for download.",
     "whatsNew": "What's New",
     "downloading": "Downloading...",
     "updateNow": "Update Now",

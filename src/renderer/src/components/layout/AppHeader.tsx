@@ -39,8 +39,13 @@ export const AppHeader = memo(() => {
         <div className="relative px-5 py-4 flex flex-col gap-4">
           <div className="flex flex-wrap items-center gap-3 justify-between">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] rounded-full bg-primary-500/10 border border-primary-500/30 text-text-primary">
-                {t('app.subtitle')}
+              <div className="px-4 py-2 rounded-xl bg-primary-500/10 border border-primary-500/30 shadow-soft">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-text-primary">
+                  {t('app.title')}
+                </div>
+                <div className="text-xs font-medium text-text-muted tracking-[0.02em]">
+                  {t('app.subtitle')}
+                </div>
               </div>
               <LCUStatusIndicator
                 connected={lcuConnected}

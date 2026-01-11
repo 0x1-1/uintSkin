@@ -1,9 +1,9 @@
 import { Theme } from './types'
 
-// MythicShift palette — focused on electric teal and magenta accents
+// uintSkin palette — focused on electric teal and magenta accents
 export const mythicLightTheme: Theme = {
   id: 'mythic-light',
-  name: 'MythicShift Light',
+  name: 'uintSkin Light',
   description: 'Crisp studio look with electric teal and magenta cues',
   isDark: false,
   colors: {
@@ -60,7 +60,7 @@ export const mythicLightTheme: Theme = {
 
 export const mythicDarkTheme: Theme = {
   id: 'mythic-dark',
-  name: 'MythicShift Dark',
+  name: 'uintSkin Dark',
   description: 'Obsidian base with neon teal glow',
   isDark: true,
   colors: {

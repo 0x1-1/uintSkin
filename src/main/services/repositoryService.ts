@@ -426,7 +426,7 @@ export class RepositoryService {
       const repoResponse = await axios.get(repoUrl, {
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          'User-Agent': 'MythicShift-LoL-Skin-Lab'
+          'User-Agent': 'uintSkin-LoL-Skin-Manager'
         },
         timeout: 10000
       })
@@ -445,7 +445,7 @@ export class RepositoryService {
         const contentsResponse = await axios.get(contentsUrl, {
           headers: {
             Accept: 'application/vnd.github.v3+json',
-            'User-Agent': 'MythicShift-LoL-Skin-Lab'
+            'User-Agent': 'uintSkin-LoL-Skin-Manager'
           },
           timeout: 10000
         })

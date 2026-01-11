@@ -46,12 +46,10 @@ export function TitleBar({ appVersion }: TitleBarProps) {
       >
         <div className="flex items-center gap-3 px-3 py-2 rounded-xl bg-surface/70 border border-border-subtle shadow-soft">
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500/80 via-primary-600/70 to-secondary-500/70 flex items-center justify-center shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
-            <img src={logoMark} alt="MythicShift logo" className="w-6 h-6 object-contain" />
+            <img src={logoMark} alt="uintSkin logo" className="w-6 h-6 object-contain" />
           </div>
           <div className="leading-tight">
-            <div className="text-sm font-semibold tracking-wide text-text-primary uppercase">
-              MythicShift
-            </div>
+            <div className="text-sm font-semibold tracking-wide text-text-primary uppercase">uintSkin</div>
             <div className="text-[11px] font-medium text-text-muted tracking-[0.08em]">
               {t('app.subtitle')}
             </div>
