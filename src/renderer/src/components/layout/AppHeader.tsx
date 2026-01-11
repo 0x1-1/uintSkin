@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useAtom, useAtomValue } from 'jotai'
+import { useTheme } from '../../contexts/ThemeContext'
 import { gamePathAtom } from '../../store/atoms/game.atoms'
 import { showFavoritesOnlyAtom } from '../../store/atoms'
 import { showSettingsDialogAtom } from '../../store/atoms/ui.atoms'
@@ -23,19 +24,27 @@ export const AppHeader = memo(() => {
   const championDetectionEnabled = useAtomValue(championDetectionEnabledAtom)
   const lcuConnected = useAtomValue(lcuConnectedAtom)
   const isInChampSelect = useAtomValue(isInChampSelectAtom)
+  const { theme } = useTheme()
 
   const { browseForGame } = useGameDetection()
   const loading = false
 
+  const gradient = theme.isDark
+    ? 'linear-gradient(90deg, #0c1530 0%, #0f1135 50%, #1a0f3b 100%)'
+    : `linear-gradient(90deg, ${theme.colors.background.surface} 0%, ${theme.colors.background.elevated} 60%, ${theme.colors.primary[50]} 100%)`
+
   return (
     <div className="px-6 pt-3 pb-2">
-      <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-gradient-to-r from-[#0c1530] via-[#0f1135] to-[#1a0f3b] shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-        <div className="absolute inset-0 opacity-50 bg-[radial-gradient(900px_at_12%_20%,rgba(0,176,240,0.25),transparent),radial-gradient(780px_at_80%_8%,rgba(241,99,184,0.28),transparent)]" />
+      <div
+        className="relative overflow-hidden rounded-2xl border border-border-subtle shadow-[0_24px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl"
+        style={{ background: gradient }}
+      >
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(900px_at_12%_20%,rgba(0,176,240,0.18),transparent),radial-gradient(780px_at_80%_8%,rgba(241,99,184,0.2),transparent)]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-        <div className="relative px-5 py-4 lg:px-7 lg:py-5 flex flex-col gap-4">
+        <div className="relative px-5 py-4 lg:px-7 lg:py-5 flex flex-col gap-4 text-[color:var(--color-text-primary)]">
           <div className="flex flex-wrap items-center gap-3 justify-between">
             <div className="flex items-center gap-3 flex-1 min-w-[320px] bg-white/6 border border-white/10 rounded-xl px-4 py-3 shadow-soft">
-              <div className="flex-1 truncate rounded-lg bg-black/20 px-3 py-2 text-sm border border-white/10 text-white/85">
+              <div className="flex-1 truncate rounded-lg bg-black/10 dark:bg-black/20 px-3 py-2 text-sm border border-white/10 text-[color:var(--color-text-primary)]">
                 {gamePath || t('status.gameNotFound')}
               </div>
               <button
