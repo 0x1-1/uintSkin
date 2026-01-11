@@ -4,6 +4,7 @@ import { Minus, Square, X } from 'lucide-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { ThemePicker } from './ThemePicker'
 import { Button } from './ui/button'
+import { useTheme } from '../contexts/ThemeContext'
 
 interface TitleBarProps {
   appVersion?: string
@@ -12,6 +13,7 @@ interface TitleBarProps {
 export function TitleBar({ appVersion }: TitleBarProps) {
   const { t } = useTranslation()
   const [isMaximized, setIsMaximized] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const poll = async () => {
@@ -27,16 +29,28 @@ export function TitleBar({ appVersion }: TitleBarProps) {
   const handleMaximize = () => window.api.maximizeWindow()
   const handleClose = () => window.api.closeWindow()
 
+  const barBackground = theme.isDark
+    ? 'linear-gradient(90deg, #0b1124 0%, #101a34 50%, #1b1533 100%)'
+    : `linear-gradient(90deg, ${theme.colors.background.surface} 0%, ${theme.colors.background.elevated} 50%, ${theme.colors.primary[50]} 100%)`
+
+  const buttonHover = theme.isDark ? 'hover:bg-white/10 hover:border-white/10' : 'hover:bg-black/5'
+  const buttonText = theme.isDark ? 'text-white/80 hover:text-white' : 'text-[color:var(--color-text-primary)]'
+
   return (
     <div className="fixed top-0 left-0 right-0 h-[54px] z-50 select-none">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1124] via-[#101a34] to-[#1b1533] border-b border-white/8 shadow-[0_12px_30px_rgba(0,0,0,0.45)]" />
+      <div
+        className="absolute inset-0 border-b border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+        style={{ background: barBackground, borderColor: theme.isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' }}
+      />
       <div
         className="relative h-full px-3 lg:px-4 flex items-center gap-3"
         style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}
       >
         <div className="flex items-center gap-3 h-full">
-          <div className="leading-tight text-white">
-            <div className="text-sm font-semibold tracking-[0.12em]">uintSkin{appVersion ? ` v${appVersion}` : ''}</div>
+          <div className="leading-tight" style={{ color: 'var(--color-text-primary)' }}>
+            <div className="text-sm font-semibold tracking-[0.12em]">
+              uintSkin{appVersion ? ` v${appVersion}` : ''}
+            </div>
           </div>
         </div>
 
@@ -50,7 +64,7 @@ export function TitleBar({ appVersion }: TitleBarProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="w-9 h-9 rounded-lg hover:bg-white/10 border border-transparent hover:border-white/10 text-white/80 hover:text-white"
+              className={`w-9 h-9 rounded-lg border border-transparent ${buttonHover} ${buttonText}`}
               onClick={handleMinimize}
               aria-label={t('actions.minimize')}
             >
@@ -59,7 +73,7 @@ export function TitleBar({ appVersion }: TitleBarProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="w-9 h-9 rounded-lg hover:bg-white/10 border border-transparent hover:border-white/10 text-white/80 hover:text-white"
+              className={`w-9 h-9 rounded-lg border border-transparent ${buttonHover} ${buttonText}`}
               onClick={handleMaximize}
               aria-label={isMaximized ? t('actions.restore') : t('actions.maximize')}
             >
@@ -68,7 +82,11 @@ export function TitleBar({ appVersion }: TitleBarProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="w-9 h-9 rounded-lg hover:bg-error/12 hover:text-error border border-transparent hover:border-error/25 text-white/80"
+              className={`w-9 h-9 rounded-lg border border-transparent ${buttonText} ${
+                theme.isDark
+                  ? 'hover:bg-error/12 hover:text-error hover:border-error/25'
+                  : 'hover:bg-error/10 hover:text-error'
+              }`}
               onClick={handleClose}
               aria-label={t('actions.close')}
             >

@@ -33,6 +33,24 @@ export const AppHeader = memo(() => {
     ? 'linear-gradient(90deg, #0c1530 0%, #0f1135 50%, #1a0f3b 100%)'
     : `linear-gradient(90deg, ${theme.colors.background.surface} 0%, ${theme.colors.background.elevated} 60%, ${theme.colors.primary[50]} 100%)`
 
+  const favoritesStyle = showFavoritesOnly
+    ? {
+        backgroundColor: theme.isDark ? theme.colors.secondary[500] : theme.colors.secondary[100],
+        borderColor: theme.isDark ? theme.colors.secondary[400] : theme.colors.secondary[200],
+        color: theme.colors.text.primary
+      }
+    : {
+        backgroundColor: theme.isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
+        borderColor: theme.isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)',
+        color: theme.colors.text.primary
+      }
+
+  const settingsStyle = {
+    backgroundColor: theme.isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
+    borderColor: theme.isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)',
+    color: theme.colors.text.primary
+  }
+
   return (
     <div className="px-6 pt-3 pb-2">
       <div
@@ -63,19 +81,15 @@ export const AppHeader = memo(() => {
               />
               <RoomPanel />
               <button
-                className={`px-4 py-2.5 text-sm rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-semibold tracking-wide
-            ${
-              showFavoritesOnly
-                ? 'bg-secondary-500/20 text-white border border-secondary-400/60 shadow-soft'
-                : 'bg-white/10 text-white border border-white/10 shadow-soft hover:border-white/30'
-            }`}
+                className="px-4 py-2.5 text-sm rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-semibold tracking-wide border shadow-soft hover:brightness-[1.03]"
+                style={favoritesStyle}
                 onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
                 disabled={loading}
                 aria-pressed={showFavoritesOnly}
                 aria-label={t('nav.favorites')}
               >
                 <Heart
-                  className={`w-4 h-4 ${showFavoritesOnly ? 'text-white' : 'text-white/70'} transition-colors`}
+                  className="w-4 h-4"
                   aria-hidden="true"
                   strokeWidth={showFavoritesOnly ? 2.4 : 2}
                   fill={showFavoritesOnly ? 'currentColor' : 'none'}
@@ -83,7 +97,8 @@ export const AppHeader = memo(() => {
                 {t('nav.favorites')}
               </button>
               <button
-                className="px-4 py-2.5 text-sm rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold transition-all duration-200 border border-white/20 shadow-soft flex items-center gap-2"
+                className="px-4 py-2.5 text-sm rounded-full font-semibold transition-all duration-200 border shadow-soft flex items-center gap-2 hover:brightness-[1.03]"
+                style={settingsStyle}
                 onClick={() => setShowSettingsDialog(true)}
                 title={t('settings.title')}
               >

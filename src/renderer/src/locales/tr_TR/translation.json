@@ -35,11 +35,11 @@
     "later": "Sonra",
     "skipForNow": "Şimdilik atla",
     "downloadAndInstall": "İndir ve kur",
-    "multiSelect": "Çoklu Seçim",
-    "exitMultiSelect": "Çoklu Seçimden Çık",
-    "deleteSelected": "Seçilenleri Sil",
-    "selectAll": "Tümünü Seç",
-    "clearSelection": "Seçimi Temizle"
+    "multiSelect": "Çoklu seçim",
+    "exitMultiSelect": "Çoklu seçimden çık",
+    "deleteSelected": "Seçilenleri sil",
+    "selectAll": "Tümünü seç",
+    "clearSelection": "Seçimi temizle"
   },
   "nav": {
     "favorites": "Favoriler",
@@ -93,9 +93,9 @@
     "failedToDeleteMod": "Mod silinemedi: {{error}}",
     "failedToDeleteSkin": "Skin silinemedi: {{error}}",
     "autoSelectedSkinsCleanedUp": "{{count}} otomatik seçilmiş skin temizlendi",
-    "cancelling": "Cancelling operation...",
-    "cancelled": "Operation cancelled",
-    "failedToCancel": "Failed to cancel: {{error}}"
+    "cancelling": "İşlem iptal ediliyor...",
+    "cancelled": "İşlem iptal edildi",
+    "failedToCancel": "İptal edilemedi: {{error}}"
   },
   "tools": {
     "required": "CS:LOL Tools gerekli",
@@ -110,35 +110,35 @@
     "havingTrouble": "Sorun mu yaşıyorsunuz? Ayrıca yapabilirsiniz:"
   },
   "downloadAll": {
-    "title": "Download All Skins",
-    "button": "Download All",
-    "optionsTitle": "Download All Skins",
-    "optionsDescription": "Choose which skins to download and configure download settings.",
-    "infoTitle": "Download Information",
-    "infoDescription": "Approximately {{count}} skins will be downloaded (~{{size}}).",
-    "filterOptions": "Filter Options",
-    "excludeChromas": "Exclude Chromas",
-    "excludeChromasDesc": "Skip chroma variants to reduce download size",
-    "excludeVariants": "Exclude Variants",
-    "excludeVariantsDesc": "Skip prestige editions and special variants",
-    "excludeLegacy": "Exclude Legacy Skins",
-    "excludeLegacyDesc": "Skip legacy and limited-time skins",
-    "excludeEsports": "Exclude Esports Skins",
-    "excludeEsportsDesc": "Skip championship and professional team skins",
-    "onlyFavorites": "Only Favorites",
-    "onlyFavoritesDesc": "Download only your favorited skins",
-    "performanceOptions": "Performance Options",
-    "concurrency": "Concurrent Downloads",
-    "concurrencyDesc": "Number of simultaneous downloads (higher = faster but more resource intensive)",
-    "startDownload": "Start Download",
-    "progress": "{{completed}} of {{total}} skins",
-    "speed": "Speed",
-    "timeRemaining": "Time remaining",
-    "failedDownloads": "{{count}} failed downloads",
-    "pause": "Pause",
-    "resume": "Resume",
-    "cancel": "Cancel",
-    "completed": "Download Complete",
+    "title": "Tüm Skinleri İndir",
+    "button": "Tümünü indir",
+    "optionsTitle": "Tüm Skinleri İndir",
+    "optionsDescription": "İndirilecek skinleri seçin ve indirme ayarlarını yapılandırın.",
+    "infoTitle": "İndirme Bilgisi",
+    "infoDescription": "Yaklaşık {{count}} skin indirilecek (~{{size}}).",
+    "filterOptions": "Filtre Ayarları",
+    "excludeChromas": "Chroma hariç",
+    "excludeChromasDesc": "Boyut azaltmak için chroma varyantlarını atla",
+    "excludeVariants": "Varyantları hariç tut",
+    "excludeVariantsDesc": "Prestige ve özel varyantları atla",
+    "excludeLegacy": "Legacy skinleri hariç tut",
+    "excludeLegacyDesc": "Eski ve sınırlı süreli skinleri atla",
+    "excludeEsports": "E-spor skinlerini hariç tut",
+    "excludeEsportsDesc": "Şampiyona ve takım skinlerini atla",
+    "onlyFavorites": "Sadece favoriler",
+    "onlyFavoritesDesc": "Sadece favori skinlerini indir",
+    "performanceOptions": "Performans Ayarları",
+    "concurrency": "Eşzamanlı indirme",
+    "concurrencyDesc": "Aynı anda kaç indirme (yüksek = hızlı, daha çok kaynak)",
+    "startDownload": "İndirmeyi başlat",
+    "progress": "{{completed}} / {{total}} skin",
+    "speed": "Hız",
+    "timeRemaining": "Kalan süre",
+    "failedDownloads": "{{count}} başarısız indirme",
+    "pause": "Duraklat",
+    "resume": "Sürdür",
+    "cancel": "İptal",
+    "completed": "İndirme tamamlandı",
     "downloadingRepository": "Depo indiriliyor",
     "extracting": "Dosyalar çıkarılıyor",
     "processingSkins": "Kostümler işleniyor",
@@ -157,88 +157,40 @@
     "notifications": "Bildirimler",
     "leagueClient": {
       "title": "League Client entegrasyonu",
-      "description": "League of Legends istemcisine bağlanan özellikleri etkinleştir"
+      "description": "League of Legends istemcisine bağlı özellikleri etkinleştir"
     },
     "championDetection": {
       "title": "Şampiyon tespiti",
-      "description": "League istemcisinde şampiyon seçtiğinizde otomatik olarak bildirimler göster"
+      "description": "Şampiyon seçtiğinizde otomatik bildirimler göster"
     },
     "autoViewSkins": {
       "title": "Skinleri otomatik görüntüle",
-      "description": "Şampiyon tespit edildiğinde skinleri otomatik olarak görüntüle (onay iletişim kutusunu atlar)"
+      "description": "Şampiyon tespit edildiğinde skinleri otomatik göster (onayı atlar)"
     },
     "smartApply": {
       "title": "Akıllı uygulama",
-      "description": "Sadece takımınızdaki şampiyonlar için skinleri yükle (yükleme süresini azaltır)"
+      "description": "Sadece takımınızdaki şampiyonlar için skinleri yükle"
     },
     "autoApply": {
       "title": "Otomatik uygulama",
-      "description": "Tüm şampiyonlar kilitlendiğinde skinleri otomatik olarak uygula"
-    },
-    "autoApplyTriggerTime": {
-      "title": "Otomatik uygulama tetikleme süresi",
-      "description": "Oyun başlamadan önce skinleri otomatik olarak uygulamak için saniye (5-30 saniye)"
+      "description": "Tüm şampiyonlar kilitlendiğinde skinleri otomatik uygula"
     },
     "autoAccept": {
       "title": "Maçı otomatik kabul et",
-      "description": "Maç bulunduğunda hazırlık kontrolünü otomatik olarak kabul et"
+      "description": "Maç bulunduğunda hazır kontrolünü otomatik kabul et"
     },
     "autoPick": {
       "title": "Otomatik seçim",
-      "description": "Şampiyon seçimi sırasında şampiyonları otomatik olarak seç",
-      "force": "Zorla seçim",
-      "forceDescription": "Takım seçimlerini geçersiz kıl ve zaten seçilmiş olsa bile seç",
-      "championPriority": "Seçim öncelik listesi"
+      "description": "Şampiyon seçimi sırasında şampiyonları otomatik seç"
     },
     "autoBan": {
       "title": "Otomatik yasaklama",
-      "description": "Şampiyon seçimi sırasında şampiyonları otomatik olarak yasakla",
-      "force": "Zorla yasaklama",
-      "forceDescription": "Takım niyetini geçersiz kıl ve takım arkadaşı oynamak istese bile yasakla",
-      "championPriority": "Yasaklama öncelik listesi"
-    },
-    "selectChampion": "Şampiyon seç",
-    "addChampion": "Şampiyon ekle",
-    "autoRandomSkin": {
-      "title": "Otomatik rastgele skin",
-      "description": "Şampiyon tespit edildiğinde otomatik olarak rastgele skin seç"
-    },
-    "autoRandomRaritySkin": {
-      "title": "Otomatik rastgele nadir skin",
-      "description": "Şampiyon tespit edildiğinde otomatik olarak nadir (Epic, Legendary, vb.) rastgele skin seç"
-    },
-    "autoRandomFavoriteSkin": {
-      "title": "Otomatik rastgele favori skin",
-      "description": "Şampiyon tespit edildiğinde otomatik olarak favorilerden rastgele skin seç"
-    },
-    "autoRandomHighestWinRateSkin": {
-      "title": "Otomatik rastgele en yüksek kazanma oranı skin",
-      "description": "Otomatik olarak en yüksek kazanma oranına sahip ilk 3 skinden rastgele skin seç"
-    },
-    "autoRandomHighestPickRateSkin": {
-      "title": "Otomatik rastgele en yüksek seçim oranı skin",
-      "description": "Otomatik olarak en popüler ilk 3 skinden rastgele skin seç"
-    },
-    "autoRandomMostPlayedSkin": {
-      "title": "Otomatik rastgele en çok oynanan skin",
-      "description": "Otomatik olarak en çok oynanan ilk 3 skinden rastgele skin seç"
-    },
-    "inGameOverlay": {
-      "title": "Oyun içi katman",
-      "description": "Daha hızlı skin bildirimleri için katmanı League istemcisine önceden ekle (herhangi bir Otomatik Rastgele özellik gerektirir)"
-    },
-    "allowMultipleSkinsPerChampion": {
-      "title": "Şampiyon başına birden fazla skine izin ver",
-      "description": "Aynı şampiyon için aynı anda birden fazla skin kullanmayı etkinleştir"
-    },
-    "autoFixModIssues": {
-      "title": "İçe aktarımda mod sorunlarını otomatik düzelt",
-      "description": "Modları içe aktarırken eksik sağlık çubuklarını, malzemeleri ve VFX'leri otomatik olarak düzelt"
+      "description": "Şampiyon seçimi sırasında şampiyonları otomatik yasakla"
     },
     "tabs": {
       "general": "Genel",
-      "leagueClient": "League İstemcisi",
-      "skinManagement": "Skin Yönetimi"
+      "leagueClient": "League istemcisi",
+      "skinManagement": "Skin yönetimi"
     },
     "randomSkinSelection": {
       "title": "Rastgele skin seçimi",
@@ -246,44 +198,43 @@
     },
     "minimizeToTray": {
       "title": "Sistem tepsisine küçült",
-      "description": "Kapatma düğmesine tıklandığında uygulamayı kapatmak yerine sistem tepsisine gizle"
-    },
-    "autoExtractImages": {
-      "title": "Otomatik Önizleme Resimlerini Çıkar",
-      "description": "Skinleri içe aktarırken WAD dosyalarından otomatik olarak önizleme resimlerini çıkar (dönüştürme araçları gerektirir)"
-    },
-    "modToolsTimeout": {
-      "title": "Mod Araçları Zaman Aşımı",
-      "description": "Mod içe aktarma ve kaplama oluşturma işlemleri için maksimum bekleme süresi",
-      "hint": "Çok sayıda modunuz varsa veya sisteminiz yavaşsa bu değeri artırın. Daha hızlı hata tespiti için azaltın."
-    },
-    "cacheManagement": {
-      "title": "Skin Önbellek Yönetimi",
-      "description": "Daha hızlı mod uygulaması için kullanılan önbelleğe alınmış skin dosyalarını yönetin",
-      "info": "Önbellek {{size}} MB kullanan {{count}} mod(lar) içeriyor",
-      "clearCache": "Önbelleği Temizle",
-      "clearing": "Temizleniyor...",
-      "confirmClear": "Skin önbelleğini temizlemek istediğinizden emin misiniz? Bu, tüm skinlerin bir sonraki uygulamada yeniden içe aktarılmasını zorlayacaktır ve bu daha uzun sürebilir.",
-      "clearSuccess": "Skin önbelleği başarıyla temizlendi",
-      "clearError": "Skin önbelleği temizlenemedi"
+      "description": "Kapat butonuna basınca uygulamayı kapatmak yerine tepsiye gizle"
     },
     "applicationUpdate": {
-      "title": "Uygulama Güncellemeleri",
+      "title": "Uygulama güncellemeleri",
       "description": "Geçerli sürüm: {{version}}"
     }
   },
   "tray": {
-    "show": "uintSkin'i g?ster",
+    "show": "uintSkin'i göster",
     "hide": "uintSkin'i gizle",
     "language": "Dil",
     "openSettings": "Ayarları aç",
-    "quit": "uintSkin'den ??k",
-    "checkForUpdates": "Güncellemeleri Kontrol Et"
+    "quit": "uintSkin'den çık",
+    "checkForUpdates": "Güncellemeleri kontrol et"
+  },
+  "room": {
+    "joinCreate": "Odaya katıl/oluştur",
+    "p2pRoom": "P2P odası",
+    "description": "Başkalarıyla skinleri paylaşmak için yeni bir oda oluşturun veya mevcut bir odaya katılın.",
+    "displayName": "Görünen ad",
+    "displayNamePlaceholder": "Adınızı girin",
+    "createNew": "Yeni oda oluştur",
+    "creating": "Oluşturuluyor...",
+    "createRoom": "Oda oluştur",
+    "joinExisting": "Mevcut odaya katıl",
+    "roomIdPlaceholder": "Oda ID'sini girin (örn. ABC123)",
+    "joining": "Katılıyor...",
+    "joinRoom": "Odaya katıl",
+    "roomId": "Oda: {{id}}",
+    "copyRoomId": "Oda ID'sini kopyala",
+    "members_one": "{{count}} üye",
+    "members_other": "{{count}} üye"
   },
   "fileUpload": {
     "uploadButton": "Özel mod yükle",
     "importTitle": "Özel mod içe aktar",
-    "importDescription": "İsteğe bağlı olarak bir şampiyon seçin ve modunuz için özel bir ad belirleyin.",
+    "importDescription": "İsteğe bağlı olarak bir şampiyon seçin ve mod için özel ad belirleyin.",
     "selectedFile": "Seçili dosya",
     "selectChampion": "Şampiyon seç",
     "championPlaceholder": "Belirli bir şampiyon yok",
@@ -298,7 +249,7 @@
     "previewImage": "Önizleme resmi",
     "browseImage": "Gözat",
     "noImageSelected": "Seçili resim yok",
-    "extractImage": "Resmi Çıkar",
+    "extractImage": "Resmi çıkar",
     "extractingImage": "Çıkarılıyor...",
     "extractImageError": "Resim çıkarılamadı: {{error}}",
     "batchImportTitle": "Birden çok dosya içe aktarılıyor",
@@ -317,7 +268,7 @@
     "modNamePlaceholder": "Mod adını girin",
     "champion": "Şampiyon",
     "selectChampion": "Bir şampiyon seç",
-    "noSpecificChampion": "Belirli bir şampiyon yok (Özel mod)",
+    "noSpecificChampion": "Belirli bir şampiyon yok (özel mod)",
     "previewImage": "Önizleme resmi (isteğe bağlı)",
     "selectImage": "Resim seç",
     "newImageSelected": "Yeni resim seçildi",
@@ -328,21 +279,21 @@
     "startingFix": "Düzeltme işlemi başlatılıyor...",
     "fixCompleted": "Düzeltme başarıyla tamamlandı!",
     "fixFailed": "Düzeltme başarısız: {{error}}",
-    "fixError": "Mod düzeltilirken bir hata oluştu",
+    "fixError": "Mod düzeltilirken hata oluştu",
     "saveChanges": "Değişiklikleri kaydet"
   },
   "common": {
-    "cancel": "Cancel",
-    "close": "Close",
-    "save": "Save",
-    "saving": "Saving..."
+    "cancel": "İptal",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor..."
   },
   "cancel": "İptal",
   "success": "Başarılı",
   "error": "Hata",
   "update": {
     "available": "Güncelleme mevcut",
-    "description": "uintSkin'in yeni bir s?r?m? indirilmeye haz?r.",
+    "description": "uintSkin'in yeni bir sürümü indirilmeye hazır.",
     "whatsNew": "Yeni neler var",
     "downloading": "İndiriliyor...",
     "updateNow": "Şimdi güncelle",
@@ -350,7 +301,7 @@
     "championDataDescription": "Şampiyon verilerinin yeni sürümü mevcut. Bu güncelleme en son şampiyonları, skinleri ve diğer oyun içeriğini içerir.",
     "currentVersion": "Mevcut sürüm: ",
     "updating": "Güncelleniyor...",
-    "checkForUpdates": "Güncellemeleri Kontrol Et",
+    "checkForUpdates": "Güncellemeleri kontrol et",
     "checking": "Güncellemeler kontrol ediliyor...",
     "noUpdates": "En son sürümü kullanıyorsunuz!",
     "error": "Güncellemeler kontrol edilirken hata"
@@ -372,8 +323,8 @@
     "chromas_one": "{{count}} chroma mevcut",
     "chromas_other": "{{count}} chroma mevcut",
     "selectChroma": "{{skinName}} için chroma seç",
-    "chooseChroma_one": "{{count}} mevcut chromadan seç",
-    "chooseChroma_other": "{{count}} mevcut chromadan seç",
+    "chooseChroma_one": "{{count}} chromadan seç",
+    "chooseChroma_other": "{{count}} chromadan seç",
     "selectVariant": "{{skinName}} için varyant seç",
     "chooseVariant": "{{count}} mevcut {{type}} arasından seç",
     "exaltedVariant": "Yükseltilmiş varyantlar",
@@ -394,7 +345,7 @@
     "updating": "Güncelleniyor...",
     "updateAll": "Tümünü güncelle ({{count}})",
     "updatingCount": "{{count}} güncelleniyor...",
-    "downloadedBeforeTracking": "Güncelleme takibinden önce indirildi"
+    "downloadedBeforeTracking": "Takipten önce indirildi"
   },
   "filters": {
     "title": "Filtreler ve sıralama",
@@ -403,32 +354,32 @@
     "all": "Tümü",
     "downloaded": "İndirilmiş",
     "notDownloaded": "İndirilmemiş",
-    "chromas": "Chromalar",
-    "hasChromas": "Chroması var",
-    "noChromas": "Chroması yok",
+    "chromas": "Chroma",
+    "hasChromas": "Chroma var",
+    "noChromas": "Chroma yok",
     "championType": "Şampiyon tipi",
     "sortBy": "Sıralama ölçütü",
     "nameAsc": "Ad (A-Z)",
     "nameDesc": "Ad (Z-A)",
-    "skinNumAsc": "Skin No (Düşükten Yükseğe)",
-    "skinNumDesc": "Skin No (Yüksekten Düşüğe)",
+    "skinNumAsc": "Skin No (Düşükten yükseğe)",
+    "skinNumDesc": "Skin No (Yüksekten düşüğe)",
     "championName": "Şampiyon adı",
-    "rarityAsc": "Nadir (Düşükten Yükseğe)",
-    "rarityDesc": "Nadir (Yüksekten Düşüğe)",
-    "winRateDesc": "Kazanma oranı (Yüksekten Düşüğe)",
-    "winRateAsc": "Kazanma oranı (Düşükten Yükseğe)",
-    "pickRateDesc": "Seçim oranı (Yüksekten Düşüğe)",
-    "pickRateAsc": "Seçim oranı (Düşükten Yükseğe)",
+    "rarityAsc": "Nadir (Düşükten yükseğe)",
+    "rarityDesc": "Nadir (Yüksekten düşüğe)",
+    "winRateDesc": "Kazanma oranı (Yüksekten düşüğe)",
+    "winRateAsc": "Kazanma oranı (Düşükten yükseğe)",
+    "pickRateDesc": "Seçim oranı (Yüksekten düşüğe)",
+    "pickRateAsc": "Seçim oranı (Düşükten yükseğe)",
     "totalGamesDesc": "En çok oynanan",
     "totalGamesAsc": "En az oynanan",
     "rarity": "Nadir",
     "rarities": {
-      "epic": "Epic",
-      "legendary": "Legendary",
-      "ultimate": "Ultimate",
-      "mythic": "Mythic",
-      "transcendent": "Transcendent",
-      "exalted": "Exalted"
+      "epic": "Destansı",
+      "legendary": "Efsanevi",
+      "ultimate": "Nihai",
+      "mythic": "Mistik",
+      "transcendent": "Aşkın",
+      "exalted": "Yüceltilmiş"
     },
     "availability": "Kullanılabilirlik",
     "showUnavailable": "Kullanılamayan kostümleri göster"
@@ -440,39 +391,39 @@
     "apply_one": "{{count}} skin uygula",
     "apply_other": "{{count}} skin uygula",
     "messages": "Yama programı mesajları:",
-    "cancelling": "Cancelling...",
-    "cancelApply": "Cancel"
+    "cancelling": "İptal ediliyor...",
+    "cancelApply": "İptal et"
   },
   "presets": {
     "title": "Ön Ayarlar",
-    "saveAsPreset": "Ön Ayar Olarak Kaydet",
-    "loadPreset": "Ön Ayar Yükle",
-    "managePresets": "Ön Ayarları Yönet",
+    "saveAsPreset": "Ön ayar olarak kaydet",
+    "loadPreset": "Ön ayar yükle",
+    "managePresets": "Ön ayarları yönet",
     "noPresets": "Henüz kaydedilmiş ön ayar yok",
-    "createFirst": "Skinleri seçerek ve 'Ön Ayar Olarak Kaydet'e tıklayarak ilk ön ayarınızı oluşturun",
+    "createFirst": "Skinleri seçip 'Ön ayar olarak kaydet'e tıklayarak ilk ön ayarınızı oluşturun",
     "saveDialog": {
-      "title": "Ön Ayar Kaydet",
+      "title": "Ön ayar kaydet",
       "description": "{{count}} seçili skini ön ayar olarak kaydet",
-      "nameLabel": "Ön Ayar Adı",
+      "nameLabel": "Ön ayar adı",
       "namePlaceholder": "Ön ayar adını girin",
       "descriptionLabel": "Açıklama (isteğe bağlı)",
-      "descriptionPlaceholder": "Bu ön ayar için bir açıklama girin"
+      "descriptionPlaceholder": "Bu ön ayar için açıklama girin"
     },
     "errors": {
       "nameRequired": "Ön ayar adı gereklidir",
-      "saveFailed": "Ön ayar kaydetme başarısız",
-      "loadFailed": "Ön ayar yükleme başarısız",
-      "deleteFailed": "Ön ayar silme başarısız",
-      "exportFailed": "Ön ayar dışa aktarma başarısız",
-      "importFailed": "Ön ayar içe aktarma başarısız"
+      "saveFailed": "Ön ayar kaydedilemedi",
+      "loadFailed": "Ön ayar yüklenemedi",
+      "deleteFailed": "Ön ayar silinemedi",
+      "exportFailed": "Ön ayar dışa aktarılamadı",
+      "importFailed": "Ön ayar içe aktarılamadı"
     },
-    "saveSuccess": "Ön ayar '{{name}}' başarıyla kaydedildi",
-    "saveFailed": "Ön ayar kaydetme başarısız",
-    "loadSuccess": "Ön ayar '{{name}}' başarıyla yüklendi",
-    "deleteConfirm": "Ön ayar '{{name}}'i silmek istediğinizden emin misiniz?",
-    "deleteSuccess": "Ön ayar başarıyla silindi",
-    "exportSuccess": "Ön ayar başarıyla dışa aktarıldı",
-    "importSuccess": "Ön ayar başarıyla içe aktarıldı",
+    "saveSuccess": "Ön ayar '{{name}}' kaydedildi",
+    "saveFailed": "Ön ayar kaydedilemedi",
+    "loadSuccess": "Ön ayar '{{name}}' yüklendi",
+    "deleteConfirm": "Ön ayar '{{name}}' silinsin mi?",
+    "deleteSuccess": "Ön ayar silindi",
+    "exportSuccess": "Ön ayar dışa aktarıldı",
+    "importSuccess": "Ön ayar içe aktarıldı",
     "skinCount_one": "{{count}} skin",
     "skinCount_other": "{{count}} skin",
     "lastUpdated": "Son güncelleme: {{date}}",
@@ -480,35 +431,17 @@
       "apply": "Uygula",
       "edit": "Düzenle",
       "duplicate": "Çoğalt",
-      "export": "Dışa Aktar",
+      "export": "Dışa aktar",
       "delete": "Sil"
     },
-    "importPreset": "Ön Ayar İçe Aktar",
+    "importPreset": "Ön ayar içe aktar",
     "noResults": "Ön ayar bulunamadı",
-    "duplicateSuccess": "Ön ayar '{{name}}' başarıyla çoğaltıldı",
+    "duplicateSuccess": "Ön ayar '{{name}}' çoğaltıldı",
     "duplicateFailed": "Ön ayar çoğaltma başarısız"
   },
-  "room": {
-    "joinCreate": "Odaya katıl/oluştur",
-    "p2pRoom": "P2P odası",
-    "description": "Başkalarıyla skinleri paylaşmak için yeni bir oda oluşturun veya mevcut bir odaya katılın.",
-    "displayName": "Görünen ad",
-    "displayNamePlaceholder": "Adınızı girin",
-    "createNew": "Yeni oda oluştur",
-    "creating": "Oluşturuluyor...",
-    "createRoom": "Oda oluştur",
-    "joinExisting": "Mevcut odaya katıl",
-    "roomIdPlaceholder": "Oda ID'sini girin (örn. ABC123)",
-    "joining": "Katılıyor...",
-    "joinRoom": "Odaya katıl",
-    "roomId": "Oda: {{id}}",
-    "copyRoomId": "Oda ID'sini kopyala",
-    "members_one": "{{count}} üye",
-    "members_other": "{{count}} üye"
-  },
-  "fileTransfer": {
+  "roomTransfer": {
     "incoming": "Gelen dosya transferi",
-    "description": "Bir eş sizinle özel mod paylaşmak istiyor",
+    "description": "Biri sizinle özel mod paylaşmak istiyor",
     "file": "Dosya:",
     "size": "Boyut:",
     "champion": "Şampiyon:",
@@ -529,34 +462,13 @@
     "viewGithub": "GitHub'da görüntüle",
     "donate": "Bağış yap"
   },
-  "lcu": {
-    "connected": "League istemcisine bağlandı",
-    "disconnected": "League istemcisinden bağlantı kesildi",
-    "championHovered": "Şampiyon seçildi",
-    "championLocked": "Şampiyon kilitlendi",
-    "viewSkins": "Skinleri görüntüle",
-    "connecting": "League istemcisine bağlanıyor...",
-    "connectionFailed": "League istemcisine bağlanılamadı",
-    "status": "LCU durumu",
-    "notConnected": "Bağlı değil",
-    "inChampSelect": "Şampiyon seçiminde",
-    "disabled": "Devre dışı",
-    "tooltipNotConnected": "Şampiyon seçimi sırasında otomatik şampiyon tespitini etkinleştirmek için League of Legends istemcisini başlatın",
-    "tooltipConnected": "League istemcisine bağlandı. Şampiyon seçtiğinizde bildirimler gösterecek",
-    "tooltipInChampSelect": "Şu anda şampiyon seçiminde. Bildirim görmek için bir şampiyon seçin",
-    "tooltipDisabled": "Şampiyon tespiti devre dışı. Şampiyon seçerken bildirimler almak için ayarlardan etkinleştirin",
-    "championLockedDescription": "{{champion}} şampiyonunu kilitlemişsiniz. Mevcut skinlere göz atmak ister misiniz?",
-    "championHoveredDescription": "{{champion}} şampiyonunun üzerine geldiniz. Mevcut skinlere göz atmak ister misiniz?",
-    "randomSkin": "Rastgele skin",
-    "randomRaritySkin": "Rastgele nadir skin"
-  },
   "smartApply": {
     "willApply": "Akıllı: {{count}}/{{total}}",
     "applying": "Şunlar için {{count}} skin uygulanıyor: {{champions}}",
     "success": "{{total}} skinden {{applied}} tanesi uygulandı",
     "failed": "Skinler uygulanamadı",
     "noSkinsToApply": "Takımınız için uygulanacak skin yok",
-    "noSkinsForTeam": "Takım şampiyonlarınız için seçilmiş skin yok"
+    "noSkinsForTeam": "Takım şampiyonlarınız için seçili skin yok"
   },
   "errors": {
     "generic": "Bir hata oluştu",
@@ -564,7 +476,7 @@
     "connectionError": "Bağlantı hatası",
     "pathNotSet": "Lütfen önce oyun yolunu ayarlayın",
     "operationTimeout": "İşlem zaman aşımına uğradı. Lütfen tekrar deneyin.",
-    "skinNotAvailable": "Skin lol-skins deposunda mevcut değil veya eşleştirme yanlış"
+    "skinNotAvailable": "Skin lol-skins deposunda mevcut değil veya eşleştirme hatalı"
   },
   "confirmations": {
     "confirmDeleteAll": "Tüm skinleri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
@@ -587,7 +499,7 @@
     "urlTab": "URL'den",
     "dropFiles": "Dosyaları buraya bırakın",
     "or": "veya",
-    "browseFiles": "Dosyalara Göz At",
+    "browseFiles": "Dosyalara göz at",
     "supportedFormats": "Desteklenen formatlar:",
     "enterDirectUrl": "Doğrudan indirme URL'sini girin",
     "directUrlPlaceholder": "https://ornek.com/mod.zip",
@@ -595,63 +507,71 @@
     "invalidUrl": "Geçersiz URL. Lütfen mod dosyasına doğrudan indirme bağlantısı sağlayın",
     "downloadFailed": "Mod indirilemedi",
     "downloading": "İndiriliyor...",
-    "download": "İndir ve İçe Aktar",
+    "download": "İndir ve içe aktar",
     "directDownloadNote": "Yalnızca doğrudan indirme bağlantıları desteklenir",
     "clipboardError": "Pano okunamadı"
   },
   "p2p": {
     "status": {
-      "disconnected": "Disconnected",
-      "retrying": "Reconnecting...",
-      "connected": "Connected",
-      "roomReady": "Room Ready",
-      "direct": "Direct (Fast)",
-      "relay": "Relay (Slower)",
-      "unknown": "Unknown"
+      "disconnected": "Bağlı değil",
+      "retrying": "Yeniden bağlanıyor...",
+      "connected": "Bağlı",
+      "roomReady": "Oda hazır",
+      "direct": "Doğrudan (hızlı)",
+      "relay": "Aktarıcı (daha yavaş)",
+      "unknown": "Bilinmiyor"
     },
     "tooltip": {
-      "connectionType": "Connection type: {{type}}",
-      "latency": "Latency: {{ms}}ms",
-      "packetLoss": "Packet loss: {{percent}}%",
-      "bandwidth": "Bandwidth: {{mbps}} Mbps",
-      "clickForDetails": "Click for diagnostics"
+      "connectionType": "Bağlantı tipi: {{type}}",
+      "latency": "Gecikme: {{ms}}ms",
+      "packetLoss": "Paket kaybı: {{percent}}%",
+      "bandwidth": "Bant genişliği: {{mbps}} Mbps",
+      "clickForDetails": "Tanılama için tıkla"
     },
     "diagnostics": {
-      "title": "P2P Connection Diagnostics",
-      "connectionStatus": "Connection Status",
-      "status": "Status",
-      "type": "Type",
-      "attempts": "Connection Attempts",
-      "quality": "Connection Quality",
-      "latency": "Latency",
-      "packetLoss": "Packet Loss",
-      "bandwidth": "Bandwidth",
-      "network": "Network Information",
-      "natType": "NAT Type",
-      "relayHelp": "Your connection is being relayed through a server. This may result in higher latency but ensures connectivity.",
-      "directHelp": "You have a direct peer-to-peer connection. This provides the best performance.",
-      "connectingHelp": "Establishing connection. Please wait...",
-      "waitingForPeers": "Waiting for other members to join the room...",
-      "troubleshooting": "Troubleshooting Tips",
-      "tip1": "Check your firewall settings",
-      "tip2": "Ensure your network allows UDP traffic",
-      "tip3": "Try restarting your router if connection issues persist",
-      "symmetricNatWarning": "Your network uses Symmetric NAT which requires relay servers for connectivity"
+      "title": "P2P Bağlantı Tanılama",
+      "connectionStatus": "Bağlantı durumu",
+      "status": "Durum",
+      "type": "Tip",
+      "attempts": "Bağlantı denemesi",
+      "quality": "Bağlantı kalitesi",
+      "latency": "Gecikme",
+      "packetLoss": "Paket kaybı",
+      "bandwidth": "Bant genişliği",
+      "network": "Ağ bilgisi",
+      "natType": "NAT türü",
+      "relayHelp": "Bağlantınız bir sunucu üzerinden aktarılıyor; gecikme artabilir ama bağlantı sağlanır.",
+      "directHelp": "Doğrudan eşler arası bağlantınız var; en iyi performans.",
+      "connectingHelp": "Bağlantı kuruluyor, lütfen bekleyin...",
+      "waitingForPeers": "Diğer üyelerin odaya katılması bekleniyor...",
+      "troubleshooting": "Sorun giderme ipuçları",
+      "tip1": "Güvenlik duvarı ayarlarını kontrol edin",
+      "tip2": "Ağınızın UDP trafiğine izin verdiğinden emin olun",
+      "tip3": "Sorun sürerse modemi yeniden başlatın",
+      "symmetricNatWarning": "Ağınız Symmetric NAT kullanıyor; bağlantı için aktarım sunucusu gerekebilir"
     },
     "settings": {
-      "title": "P2P Settings",
-      "customServers": "Custom TURN Servers",
-      "addServer": "Add Server",
-      "serverUrl": "Server URL",
-      "username": "Username",
-      "credential": "Credential",
-      "meteredApiKey": "Metered API Key",
-      "meteredApiKeyHelp": "Get 50GB/month free at metered.ca",
-      "testConnection": "Test Connection",
-      "serverAdded": "Server added successfully",
-      "serverRemoved": "Server removed",
-      "testSuccess": "Connection test successful",
-      "testFailed": "Connection test failed"
+      "title": "P2P Ayarları",
+      "customServers": "Özel TURN sunucuları",
+      "addServer": "Sunucu ekle",
+      "serverUrl": "Sunucu URL",
+      "username": "Kullanıcı adı",
+      "credential": "Parola",
+      "meteredApiKey": "Metered API Anahtarı",
+      "meteredApiKeyHelp": "metered.ca'da aylık 50GB ücretsiz",
+      "testConnection": "Bağlantıyı test et",
+      "serverAdded": "Sunucu eklendi",
+      "serverRemoved": "Sunucu kaldırıldı",
+      "testSuccess": "Bağlantı testi başarılı",
+      "testFailed": "Bağlantı testi başarısız"
     }
+  },
+  "themePicker": {
+    "title": "Tema",
+    "colorScheme": "Renk şeması",
+    "mode": "Mod",
+    "light": "Aydınlık",
+    "dark": "Karanlık",
+    "system": "Sistem"
   }
 }
