@@ -65,6 +65,7 @@ export const VirtualizedSkinGrid: React.FC<VirtualizedSkinGridProps> = ({
     champion: Champion | null
     skin: Skin | null
   }>({ open: false, champion: null, skin: null })
+  const lastCustomImagesKeyRef = useRef<string>('')
 
   // Calculate grid dimensions based on view mode
   const { columnCount, columnWidth, rowHeight } = useMemo(() => {
@@ -149,33 +150,37 @@ export const VirtualizedSkinGrid: React.FC<VirtualizedSkinGridProps> = ({
     [customImages]
   )
 
-  // Load custom images
+  // Compute custom mod paths once per skin/downloadedSkins change
+  const customModPaths = useMemo(() => {
+    const paths = new Set<string>()
+    skins.forEach(({ champion, skin }) => {
+      if (champion.key === 'Custom' || skin.id.startsWith('custom_')) {
+        const modPath = downloadedSkins.find(
+          (ds) =>
+            ds.skinName.startsWith('[User]') &&
+            ds.skinName.includes(skin.name) &&
+            (champion.key === 'Custom' || ds.championName === champion.key)
+        )?.localPath
+        if (modPath) {
+          paths.add(modPath)
+        }
+      }
+    })
+    return Array.from(paths).sort()
+  }, [skins, downloadedSkins])
+
+  // Load custom images with deduped path set to avoid re-fetch churn
   useEffect(() => {
+    if (customModPaths.length === 0) return
+    const key = customModPaths.join('|')
+    if (key === lastCustomImagesKeyRef.current) return
+    lastCustomImagesKeyRef.current = key
+
+    let cancelled = false
     const loadCustomImages = async () => {
-      const customSkins = skins.filter(
-        (s) => s.champion.key === 'Custom' || s.skin.id.startsWith('custom_')
-      )
+      const result = await window.api.getCustomSkinImages(customModPaths)
 
-      if (customSkins.length === 0) return
-
-      const modPaths = customSkins
-        .map(
-          ({ champion, skin }) =>
-            downloadedSkins.find(
-              (ds) =>
-                ds.skinName.startsWith('[User]') &&
-                ds.skinName.includes(skin.name) &&
-                (champion.key === 'Custom' || ds.championName === champion.key)
-            )?.localPath
-        )
-        .filter((path): path is string => !!path)
-
-      if (modPaths.length === 0) return
-
-      // Single batched call
-      const result = await window.api.getCustomSkinImages(modPaths)
-
-      if (result.success) {
+      if (!cancelled && result.success) {
         setCustomImages((prev) => ({
           ...prev,
           ...result.images
@@ -184,7 +189,11 @@ export const VirtualizedSkinGrid: React.FC<VirtualizedSkinGridProps> = ({
     }
 
     loadCustomImages()
-  }, [skins, downloadedSkins])
+
+    return () => {
+      cancelled = true
+    }
+  }, [customModPaths])
 
   // Create Maps for O(1) lookup
   const downloadedSkinsMap = useMemo(() => {

@@ -166,17 +166,23 @@ export const championSkinsMapAtom = atom((get) => {
   return map
 })
 
+// Flattened list of all skins for reuse (avoids repeat Array.flat on every filter step)
+export const allDisplaySkinsAtom = atom((get) => {
+  const championSkinsMap = get(championSkinsMapAtom)
+  return Array.from(championSkinsMap.values()).flat()
+})
+
 // 2. Base filtered skins (select champion's skins only)
 export const baseFilteredSkinsAtom = atom((get) => {
   const championSkinsMap = get(championSkinsMapAtom)
+  const allDisplaySkins = get(allDisplaySkinsAtom)
   const selectedChampion = get(selectedChampionAtom)
   const selectedChampionKey = get(selectedChampionKeyAtom)
 
   if (selectedChampion) {
     return championSkinsMap.get(selectedChampion.key) || []
   } else if (selectedChampionKey === 'all') {
-    // Flatten all skins
-    return Array.from(championSkinsMap.values()).flat()
+    return allDisplaySkins
   } else if (selectedChampionKey === 'custom') {
     return championSkinsMap.get('Custom') || []
   }
@@ -186,15 +192,14 @@ export const baseFilteredSkinsAtom = atom((get) => {
 
 // 3. Search filter (only active when searching)
 export const searchFilteredSkinsAtom = atom((get) => {
-  const championSkinsMap = get(championSkinsMapAtom)
+  const allDisplaySkins = get(allDisplaySkinsAtom)
   const skins = get(baseFilteredSkinsAtom)
   const searchQuery = get(skinSearchQueryAtom)
 
   // If searching globally, search all skins
   if (searchQuery.trim()) {
     const searchLower = searchQuery.toLowerCase()
-    const allSkins = Array.from(championSkinsMap.values()).flat()
-    return allSkins.filter(({ skin }) => skin.name.toLowerCase().includes(searchLower))
+    return allDisplaySkins.filter(({ skin }) => skin.name.toLowerCase().includes(searchLower))
   }
 
   return skins
