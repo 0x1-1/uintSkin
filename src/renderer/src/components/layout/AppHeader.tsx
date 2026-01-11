@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Heart, Sparkles } from 'lucide-react'
+import { Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useAtom, useAtomValue } from 'jotai'
 import { gamePathAtom } from '../../store/atoms/game.atoms'
@@ -33,12 +33,20 @@ export const AppHeader = memo(() => {
         <div className="absolute inset-0 opacity-50 bg-[radial-gradient(900px_at_12%_20%,rgba(0,176,240,0.25),transparent),radial-gradient(780px_at_80%_8%,rgba(241,99,184,0.28),transparent)]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         <div className="relative px-5 py-4 lg:px-7 lg:py-5 flex flex-col gap-4">
-          <div className="flex flex-wrap items-center gap-2 justify-between">
-            <div className="flex items-center gap-2 text-xs text-white/75 bg-white/5 border border-white/10 rounded-full px-3 py-2 shadow-soft">
-              <Sparkles className="w-3.5 h-3.5 text-secondary-300" />
-              <span className="font-semibold tracking-wide uppercase">{t('status.gameDetected')}</span>
+          <div className="flex flex-wrap items-center gap-3 justify-between">
+            <div className="flex items-center gap-3 flex-1 min-w-[320px] bg-white/6 border border-white/10 rounded-xl px-4 py-3 shadow-soft">
+              <div className="flex-1 truncate rounded-lg bg-black/20 px-3 py-2 text-sm border border-white/10 text-white/85">
+                {gamePath || t('status.gameNotFound')}
+              </div>
+              <button
+                className="px-4 py-2 text-sm bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium active:scale-[0.98]"
+                onClick={browseForGame}
+                disabled={loading}
+              >
+                {t('actions.browse')}
+              </button>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 ml-auto">
               <LCUStatusIndicator
                 connected={lcuConnected}
                 inChampSelect={isInChampSelect}
@@ -86,28 +94,6 @@ export const AppHeader = memo(() => {
                 </svg>
                 {t('settings.title')}
               </button>
-            </div>
-          </div>
-
-          <div className="grid gap-3">
-            <div className="flex items-center gap-3 bg-white/6 border border-white/10 rounded-xl px-4 py-3 shadow-soft">
-              <div className="flex flex-col gap-1 w-full text-white/80">
-                <div className="text-[10px] uppercase tracking-[0.18em] text-white/65 font-semibold">
-                  {t('status.gameDetected')}
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-1 truncate rounded-lg bg-black/20 px-3 py-2 text-sm border border-white/10">
-                    {gamePath || t('status.gameNotFound')}
-                  </div>
-                  <button
-                    className="px-4 py-2 text-sm bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium active:scale-[0.98]"
-                    onClick={browseForGame}
-                    disabled={loading}
-                  >
-                    {t('actions.browse')}
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

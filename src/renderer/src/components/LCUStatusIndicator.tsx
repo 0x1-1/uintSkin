@@ -22,7 +22,7 @@ export function LCUStatusIndicator({ connected, inChampSelect, enabled }: LCUSta
 
   return (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip delayDuration={150}>
         <TooltipTrigger asChild>
           <div
             className={`flex items-center gap-2 px-3 py-1.5 bg-surface rounded-lg border border-border cursor-help transition-all duration-200 ${
@@ -62,12 +62,17 @@ export function LCUStatusIndicator({ connected, inChampSelect, enabled }: LCUSta
                   ? inChampSelect
                     ? t('lcu.inChampSelect')
                     : 'League Connected'
-                  : 'League Client'}
+                : 'League Client'}
             </span>
           </div>
         </TooltipTrigger>
-        <TooltipContent>
-          <p className="max-w-xs">{getTooltipText()}</p>
+        <TooltipContent
+          side="top"
+          align="center"
+          sideOffset={10}
+          className="max-w-xs text-sm z-50 shadow-lg"
+        >
+          <p>{getTooltipText()}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
