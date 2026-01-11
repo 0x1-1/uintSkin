@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { promises as fs } from 'fs'
+import path from 'path'
 
 interface Champion {
   id: number
@@ -53,8 +55,9 @@ interface SkinMappingsData {
 
 export class ChampionDataService {
   private supportedLanguages = ['en_US', 'tr_TR', 'ru_RU']
+  // Data is stored on the dedicated champion-data branch
   private githubDataUrl =
-    'https://raw.githubusercontent.com/0x1-1/uintSkin/refs/heads/main/data'
+    'https://raw.githubusercontent.com/0x1-1/uintSkin/refs/heads/champion-data/data'
   private cachedData: Map<string, { version: string; champions: Champion[] }> = new Map()
   private skinMappings: Map<string, string> = new Map() // key: "championKey_skinNum", value: lolSkinsName
   private championIdCache: Map<string, Map<number, Champion>> = new Map() // key: language, value: Map<championId, Champion>
@@ -78,7 +81,25 @@ export class ChampionDataService {
 
       console.log(`Loaded ${data.skinMappings.length} skin name mappings`)
     } catch (error) {
-      console.error('Failed to load skin name mappings:', error)
+      console.error('Failed to load skin name mappings from GitHub, trying local fallback:', error)
+      await this.loadSkinMappingsFromLocal()
+    }
+  }
+
+  private async loadSkinMappingsFromLocal(): Promise<void> {
+    try {
+      const localPath = await this.resolveLocalPath('skin-name-mappings.json')
+      const raw = await fs.readFile(localPath, 'utf-8')
+      const data = JSON.parse(raw) as SkinMappingsData
+
+      data.skinMappings.forEach((mapping) => {
+        const key = `${mapping.championKey}_${mapping.skinNum}`
+        this.skinMappings.set(key, mapping.lolSkinsName)
+      })
+
+      console.log(`[ChampionData] Loaded ${data.skinMappings.length} skin name mappings locally`)
+    } catch (localError) {
+      console.error('Failed to load skin name mappings from local file:', localError)
     }
   }
 
@@ -90,9 +111,7 @@ export class ChampionDataService {
       this.cachedData.delete(language)
       this.championIdCache.delete(language)
 
-      // Try to fetch from GitHub first
       const githubUrl = `${this.githubDataUrl}/champion-data-${language}.json`
-
       try {
         const response = await axios.get(githubUrl)
         const data = response.data
@@ -178,11 +197,8 @@ export class ChampionDataService {
           championCount: data.champions.length
         }
       } catch (githubError) {
-        console.error('Failed to fetch from GitHub:', githubError)
-        return {
-          success: false,
-          message: `Failed to fetch champion data from GitHub: ${githubError instanceof Error ? githubError.message : 'Unknown error'}`
-        }
+        console.error('Failed to fetch from GitHub, trying local fallback:', githubError)
+        return this.loadChampionDataFromLocal(language)
       }
     } catch (error) {
       console.error('Error fetching champion data:', error)
@@ -191,6 +207,62 @@ export class ChampionDataService {
         message: error instanceof Error ? error.message : 'Failed to fetch champion data'
       }
     }
+  }
+
+  private async loadChampionDataFromLocal(
+    language: string
+  ): Promise<{ success: boolean; message: string; championCount?: number }> {
+    try {
+      const localPath = await this.resolveLocalPath(`champion-data-${language}.json`)
+      const raw = await fs.readFile(localPath, 'utf-8')
+      const data = JSON.parse(raw)
+
+      // add lol-skins mappings from cache if available
+      data.champions.forEach((champion: Champion) => {
+        champion.skins.forEach((skin: Skin) => {
+          if (!skin.lolSkinsName && skin.num > 0) {
+            const mappingKey = `${champion.key}_${skin.num}`
+            const lolSkinsName = this.skinMappings.get(mappingKey)
+            if (lolSkinsName) {
+              skin.lolSkinsName = lolSkinsName
+            }
+          }
+        })
+      })
+
+      this.cachedData.set(language, data)
+
+      return {
+        success: true,
+        message: `Loaded local champion data for ${data.champions.length} champions`,
+        championCount: data.champions.length
+      }
+    } catch (error) {
+      console.error('Failed to load champion data from local file:', error)
+      return {
+        success: false,
+        message: `Failed to load champion data locally: ${error instanceof Error ? error.message : 'Unknown error'}`
+      }
+    }
+  }
+
+  private async resolveLocalPath(fileName: string): Promise<string> {
+    const candidates = [
+      path.resolve(process.cwd(), 'data', fileName),
+      path.resolve(__dirname, '../../data', fileName)
+    ]
+
+    for (const candidate of candidates) {
+      try {
+        await fs.access(candidate)
+        return candidate
+      } catch {
+        // try next
+      }
+    }
+
+    // If nothing found, return first candidate (will fail with clearer error)
+    return candidates[0]
   }
 
   public async getChampionById(
