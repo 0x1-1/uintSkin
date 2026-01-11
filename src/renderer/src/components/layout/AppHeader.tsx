@@ -33,25 +33,11 @@ export const AppHeader = memo(() => {
         <div className="absolute inset-0 opacity-50 bg-[radial-gradient(900px_at_12%_20%,rgba(0,176,240,0.25),transparent),radial-gradient(780px_at_80%_8%,rgba(241,99,184,0.28),transparent)]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         <div className="relative px-5 py-4 lg:px-7 lg:py-5 flex flex-col gap-4">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 border border-white/15 shadow-soft">
-                <span className="text-lg font-bold text-white">U</span>
-              </div>
-              <div className="space-y-1">
-                <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/80">
-                  {t('app.title')}
-                </div>
-                <div className="text-xl lg:text-2xl font-semibold text-white drop-shadow-sm">
-                  {t('app.subtitle')}
-                </div>
-                <div className="text-xs text-white/70 flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-secondary-300" />
-                  {t('status.gameDetected')}
-                </div>
-              </div>
+          <div className="flex flex-wrap items-center gap-2 justify-between">
+            <div className="flex items-center gap-2 text-xs text-white/75 bg-white/5 border border-white/10 rounded-full px-3 py-2 shadow-soft">
+              <Sparkles className="w-3.5 h-3.5 text-secondary-300" />
+              <span className="font-semibold tracking-wide uppercase">{t('status.gameDetected')}</span>
             </div>
-
             <div className="flex flex-wrap items-center gap-2">
               <LCUStatusIndicator
                 connected={lcuConnected}
