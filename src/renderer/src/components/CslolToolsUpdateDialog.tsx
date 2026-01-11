@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle
 } from './ui/dialog'
+import { toast } from 'sonner'
 
 interface CslolToolsUpdateDialogProps {
   isOpen: boolean
@@ -57,7 +58,6 @@ export function CslolToolsUpdateDialog({
         setIsDownloading(false)
         onClose()
         // Show success message via toast
-        const { toast } = await import('sonner')
         toast.success('cslol-tools updated successfully! Restart to apply changes.')
       } else {
         setError(result.error || 'Failed to download update')
