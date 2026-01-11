@@ -29,15 +29,15 @@ jobs:
           run_install: false
 
       - name: Install dependencies
-        shell: bash
+        shell: pwsh
         run: pnpm install --frozen-lockfile
 
       - name: Build app
-        shell: bash
+        shell: pwsh
         run: pnpm run build
 
       - name: Build & publish (GitHub Releases)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
+        shell: pwsh
         run: pnpm exec electron-builder --win --publish always
