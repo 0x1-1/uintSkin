@@ -33,6 +33,12 @@ export function ThemePicker() {
     system: <Monitor className="w-4 h-4" />
   }
 
+  const getThemeName = (themeId: string, fallback: string) =>
+    t(`themes.names.${themeId}`, { defaultValue: fallback })
+
+  const getThemeDescription = (themeId: string, variant: 'light' | 'dark', fallback?: string) =>
+    t(`themes.descriptions.${themeId}.${variant}`, { defaultValue: fallback ?? '' })
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
@@ -93,6 +99,9 @@ export function ThemePicker() {
         {(theme.isDark ? darkThemes : lightThemes).map((themeOption) => {
           const baseThemeName = themeOption.id.replace(/-light|-dark/, '')
           const isSelected = currentBaseTheme === baseThemeName
+          const variant = themeOption.isDark ? 'dark' : 'light'
+          const localizedName = getThemeName(baseThemeName, themeOption.name.replace(/ Light| Dark/, ''))
+          const localizedDescription = getThemeDescription(baseThemeName, variant, themeOption.description)
 
           return (
             <DropdownMenuItem
@@ -112,9 +121,9 @@ export function ThemePicker() {
                   />
                 </div>
                 <div>
-                  <div className="font-medium">{themeOption.name.replace(/ Light| Dark/, '')}</div>
-                  {themeOption.description && (
-                    <div className="text-xs text-text-muted">{themeOption.description}</div>
+                  <div className="font-medium">{localizedName}</div>
+                  {localizedDescription && (
+                    <div className="text-xs text-text-muted">{localizedDescription}</div>
                   )}
                 </div>
               </div>

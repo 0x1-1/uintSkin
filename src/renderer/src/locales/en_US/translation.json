@@ -718,5 +718,64 @@
   },
   "accessibility": {
     "close": "Close"
+  },
+  "themePicker": {
+    "title": "Theme",
+    "colorScheme": "Color scheme",
+    "mode": "Mode",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "themes": {
+    "names": {
+      "mythic": "Mythic",
+      "ocean": "Ocean",
+      "ember": "Ember",
+      "forest": "Forest",
+      "dusk": "Dusk",
+      "aurora": "Aurora",
+      "sand": "Sandstone",
+      "mint": "Mint",
+      "slate": "Slate"
+    },
+    "descriptions": {
+      "mythic": {
+        "light": "Airy studio look with neon highlights",
+        "dark": "Obsidian base with neon teal"
+      },
+      "ocean": {
+        "light": "Cool blues and turquoise",
+        "dark": "Deep navy with aqua glow"
+      },
+      "ember": {
+        "light": "Warm orange with charcoal shadows",
+        "dark": "Molten ember glow with charcoal base"
+      },
+      "forest": {
+        "light": "Dusty greens and earthy tones",
+        "dark": "Deep pine with moss accents"
+      },
+      "dusk": {
+        "light": "Lilac skies and sunset warmth",
+        "dark": "Midnight violet with amber accents"
+      },
+      "aurora": {
+        "light": "Cool mint with violet shimmer",
+        "dark": "Polar contrast with violet aurora glow"
+      },
+      "sand": {
+        "light": "Creamy sandstone with clay orange",
+        "dark": "Dark clay with crisp blue accents"
+      },
+      "mint": {
+        "light": "Fresh mint with midnight blue accents",
+        "dark": "Cool mint set against midnight blue"
+      },
+      "slate": {
+        "light": "Soft monochrome inspired palette",
+        "dark": "Dark steel with icy highlights"
+      }
+    }
   }
 }

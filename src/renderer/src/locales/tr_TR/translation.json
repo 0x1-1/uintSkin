@@ -573,5 +573,56 @@
     "light": "Aydınlık",
     "dark": "Karanlık",
     "system": "Sistem"
+  },
+  "themes": {
+    "names": {
+      "mythic": "Mistik",
+      "ocean": "Okyanus",
+      "ember": "Köz",
+      "forest": "Orman",
+      "dusk": "Alacakaranlık",
+      "aurora": "Kutup Işığı",
+      "sand": "Kumtaşı",
+      "mint": "Nane",
+      "slate": "Kayrak"
+    },
+    "descriptions": {
+      "mythic": {
+        "light": "Ferahlık veren stüdyo görünümü, neon vurgular",
+        "dark": "Obsidyen taban, neon teal parıltı"
+      },
+      "ocean": {
+        "light": "Serin maviler ve turkuaz",
+        "dark": "Derin lacivert, aqua ışıltı"
+      },
+      "ember": {
+        "light": "Sıcak turuncu ve kömür gölgeleri",
+        "dark": "Erimiş köz ışıltısı ve kömür tabanı"
+      },
+      "forest": {
+        "light": "Tozlu yeşiller ve toprak tonları",
+        "dark": "Derin çam tonları ve yosun dokunuşu"
+      },
+      "dusk": {
+        "light": "Leylak tonları ve gün batımı sıcaklığı",
+        "dark": "Gece moru, amber vurgularla"
+      },
+      "aurora": {
+        "light": "Soğuk nane ve mor parıltı",
+        "dark": "Kutup ışığı kontrastı, mor aurora ışıltısı"
+      },
+      "sand": {
+        "light": "Krem tonlu kumtaşı ve killi turuncu",
+        "dark": "Koyu kil tonları, belirgin mavi vurgular"
+      },
+      "mint": {
+        "light": "Ferahlık veren nane, gece mavisi vurgularla",
+        "dark": "Soğuk nane, gece mavisi arka planla"
+      },
+      "slate": {
+        "light": "Yumuşak monokrom esintiler",
+        "dark": "Koyu çelik, buzlu vurgularla"
+      }
+    }
   }
 }
